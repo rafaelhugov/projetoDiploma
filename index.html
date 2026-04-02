@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Diplomas - IPGH</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="app-container">
         <aside class="sidebar no-print">
@@ -16,31 +20,32 @@
                 <h1>IPGH</h1>
                 <p>Gerador de Diplomas</p>
             </header>
-            
+
             <form id="diploma-form">
                 <div class="form-group">
                     <label for="titulo">Título Principal</label>
-                    <input type="text" id="titulo" value="Diploma de Membro Efetivo" placeholder="Ex: Diploma de Membro Efetivo">
+                    <input type="text" id="titulo" value="Diploma" placeholder="Ex: Diploma">
                 </div>
 
                 <div class="form-group">
                     <label for="nome">Nome do Homenageado(a)</label>
-                    <input type="text" id="nome" placeholder="Nome Completo" value="Rafael Oliveira">
+                    <input type="text" id="nome" placeholder="Nome Completo" value="Nome do Homenageado(a)">
                 </div>
 
                 <div class="form-group">
                     <label for="ato">Número do Ato (ATO-PRESI nº)</label>
-                    <input type="text" id="ato" placeholder="000/2024" value="001/2024">
+                    <input type="text" id="ato" placeholder="000/2026" value="001/2026">
                 </div>
 
                 <div class="form-group">
                     <label for="data-sessao">Data da Sessão</label>
-                    <input type="text" id="data-sessao" placeholder="01 de Janeiro de 2024" value="22 de Março de 2024">
+                    <input type="text" id="data-sessao" placeholder="01 de Janeiro de 2026" value="22 de Março de 2026">
                 </div>
 
                 <div class="form-group">
                     <label for="data-diploma">Data do Diploma</label>
-                    <input type="text" id="data-diploma" placeholder="01 de Janeiro de 2024" value="02 de Abril de 2024">
+                    <input type="text" id="data-diploma" placeholder="01 de Janeiro de 2026"
+                        value="02 de Abril de 2026">
                 </div>
 
                 <hr>
@@ -57,31 +62,37 @@
 
                 <button type="button" id="print-btn" class="primary-btn">Imprimir / Salvar PDF</button>
             </form>
-            
+
             <footer>
-                <p>&copy; 2024 IPGH - João Pessoa / PB</p>
+                <p>&copy; 2026 IPGH - João Pessoa / PB</p>
             </footer>
         </aside>
 
         <main class="preview-area">
             <div id="diploma-wrapper" class="diploma-wrapper">
-                <img src="Red and Gold Elegant Certificate of Achievement A4.png" alt="Diploma Background" class="bg-img">
-                
+                <img src="Red and Gold Elegant Certificate of Achievement A4.png" alt="Diploma Background"
+                    class="bg-img">
+
                 <div class="content-overlay">
-                    <h2 id="view-titulo" class="diploma-title">Diploma de Membro Efetivo</h2>
-                    
+                    <h2 id="view-titulo" class="diploma-title">Diploma</h2>
+
                     <div class="main-text">
-                        A Diretoria do Instituto Paraibano de Genealogia e Heráldica - IPGH, de acordo com as disposições estatutária e regimentais. Os termos do ATO-PRESI nº <span id="view-ato">001/2024</span> e acolhendo a decisão proferida pelo plenário na sessão do dia <span id="view-data-sessao">22 de Março de 2024</span>. Outorga o Presidente Diploma de Membro Efetivo(a) Senhor(a):
+                        A Diretoria do Instituto Paraibano de Genealogia e Heráldica - IPGH, de acordo com as
+                        disposições estatutária e regimentais. Os termos do ATO-PRESI nº <span
+                            id="view-ato">001/2026</span> e acolhendo a decisão proferida pelo plenário na sessão do dia
+                        <span id="view-data-sessao">22 de Março de 2026</span>. Outorga o Presidente Diploma de Membro
+                        Efetivo(a) Senhor(a):
                     </div>
 
-                    <div id="view-nome" class="recipient-name">Rafael Oliveira</div>
+                    <div id="view-nome" class="recipient-name">Nome do Homenageado(a)</div>
 
                     <div class="sub-text">
-                        Para que possa gozar dos direitos e prerrogativas estabelecidos nos dispositivos que regem seu normativo interno.
+                        Para que possa gozar dos direitos e prerrogativas estabelecidos nos dispositivos que regem seu
+                        normativo interno.
                     </div>
 
                     <div class="date-line">
-                        Joao Pessoa - PB, <span id="view-data-diploma">02 de Abril de 2024</span>
+                        João Pessoa/PB, <span id="view-data-diploma">02 de Abril de 2026</span>
                     </div>
 
                     <div class="signatures">
@@ -101,4 +112,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>
