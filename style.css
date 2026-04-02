@@ -1,0 +1,298 @@
+:root {
+    --primary: #ca8a04;
+    --primary-hover: #a16207;
+    --bg-app: #0f172a;
+    --bg-sidebar: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --white: #ffffff;
+    --gold: #d4af37;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 350px;
+    background-color: var(--bg-sidebar);
+    padding: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    background: linear-gradient(to right, #fbbf24, #d4af37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sidebar header p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+#diploma-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 0.5rem;
+}
+
+/* Custom Scrollbar */
+#diploma-form::-webkit-scrollbar {
+    width: 4px;
+}
+#diploma-form::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+.form-group input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 0.9375rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #fbbf24 0%, #d4af37 100%);
+    color: #1e293b;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Preview Area */
+.preview-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+.diploma-wrapper {
+    width: 297mm; /* A4 Landscape width */
+    height: 210mm; /* A4 Landscape height */
+    position: relative;
+    background: white;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8); /* Scale down for screen view */
+    transform-origin: center;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+@font-face {
+    font-family: 'DiplomaFont';
+    src: url('Fonte Diploma.TTF') format('truetype');
+}
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 66mm 25mm 5mm 25mm; /* Lifted slightly for harmony */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
+
+.diploma-title {
+    font-family: 'DiplomaFont', serif;
+    font-size: 46pt;
+    margin-bottom: 4pt; /* Compressed more */
+    color: #8b0000;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.main-text {
+    font-size: 12.5pt;
+    line-height: 1.2; /* Tighter leading */
+    margin-bottom: 2pt;
+    color: #444;
+    max-width: 80%;
+    text-align: justify; /* Justified as requested */
+    margin-right: auto;
+    margin-left: 35mm;
+}
+
+.recipient-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 38pt;
+    font-style: italic;
+    color: #b45309;
+    margin: 2pt 0; /* Compressed more */
+    font-weight: 700;
+}
+
+.sub-text {
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 0pt;
+    max-width: 75%;
+    text-align: justify; /* Justified as requested */
+    margin-right: auto;
+    margin-left: 35mm;
+}
+
+.date-line {
+    position: absolute;
+    bottom: 62mm; /* Lifted higher per request */
+    right: 48mm;
+    font-size: 12pt;
+    font-weight: 500;
+    color: #333;
+    z-index: 5;
+    text-align: right;
+}
+
+.signatures {
+    position: absolute;
+    bottom: 28mm; /* Positioned at the height of the medal */
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 52mm;
+}
+
+.signature-box {
+    width: 70mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1pt solid #333; /* Added signing line */
+    padding-top: 6pt;
+}
+
+.sig-name {
+    font-size: 11pt;
+    font-weight: 700;
+    margin-bottom: 1pt;
+    color: #222;
+}
+
+.sig-label {
+    font-size: 9pt;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .app-container {
+        display: block;
+    }
+
+    .preview-area {
+        padding: 0;
+        background: none;
+    }
+
+    .diploma-wrapper {
+        transform: scale(1);
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    @page {
+        size: A4 landscape;
+        margin: 0;
+    }
+}
