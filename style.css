@@ -239,7 +239,7 @@ hr {
 
 .date-line {
     position: absolute;
-    bottom: 50mm;
+    bottom: 58mm;
     right: 42mm;
     font-size: 13pt;
     font-weight: 500;
@@ -272,14 +272,15 @@ hr {
 
 .sig-name {
     font-size: 14pt;
-    /*font-weight: 400;*/
-    margin-bottom: 1pt;
-    color: #222;
+    font-weight: 400;
+    margin-bottom: 0pt;
+    color: #666;
 }
 
 .sig-label {
     font-size: 11pt;
-    color: #666;
+    color: #222;
+    font-weight: 700;
     /*text-transform: uppercase;*/
     letter-spacing: 0.05em;
 }
