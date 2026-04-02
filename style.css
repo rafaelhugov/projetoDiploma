@@ -10,18 +10,18 @@
     --radius: 12px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
 body {
     background-color: var(--bg-app);
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .app-container {
@@ -190,8 +190,7 @@ hr {
     text-align: center;
 }
 
-.content-overlay,
-.content-overlay * {
+.content-overlay {
     font-family: 'PirataOne', cursive;
     color: #333;
 }
@@ -218,9 +217,11 @@ hr {
 }
 
 .recipient-name {
+    font-family: 'Chomsky', serif;
     font-size: 44pt;
     font-style: normal;
-    color: #b45309;
+    /*color: #ab1717;*/
+    color: #b8903b;
     margin: 5pt 0;
     font-weight: 400;
 }
@@ -271,7 +272,7 @@ hr {
 
 .sig-name {
     font-size: 14pt;
-    font-weight: 400;
+    /*font-weight: 400;*/
     margin-bottom: 1pt;
     color: #222;
 }
@@ -279,7 +280,7 @@ hr {
 .sig-label {
     font-size: 11pt;
     color: #666;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 0.05em;
 }
 
