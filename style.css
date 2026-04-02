@@ -192,13 +192,13 @@ hr {
 
 .main-text {
     font-size: 12.5pt;
-    line-height: 1.2; /* Tighter leading */
+    line-height: 1.25;
     margin-bottom: 2pt;
     color: #444;
-    max-width: 80%;
-    text-align: justify; /* Justified as requested */
+    max-width: 88%; /* Expanded to reduce side white space */
+    text-align: justify;
     margin-right: auto;
-    margin-left: 35mm;
+    margin-left: 20mm; /* Reduced from 35mm */
 }
 
 .recipient-name {
@@ -214,10 +214,10 @@ hr {
     font-size: 11pt;
     color: #555;
     margin-bottom: 0pt;
-    max-width: 75%;
-    text-align: justify; /* Justified as requested */
+    max-width: 82%; /* Expanded */
+    text-align: justify;
     margin-right: auto;
-    margin-left: 35mm;
+    margin-left: 24mm; /* Reduced from 35mm */
 }
 
 .date-line {
