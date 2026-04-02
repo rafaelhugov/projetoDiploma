@@ -73,6 +73,7 @@ body {
 #diploma-form::-webkit-scrollbar {
     width: 4px;
 }
+
 #diploma-form::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
@@ -146,12 +147,15 @@ hr {
 }
 
 .diploma-wrapper {
-    width: 297mm; /* A4 Landscape width */
-    height: 210mm; /* A4 Landscape height */
+    width: 297mm;
+    /* A4 Landscape width */
+    height: 210mm;
+    /* A4 Landscape height */
     position: relative;
     background: white;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-    transform: scale(0.8); /* Scale down for screen view */
+    transform: scale(0.8);
+    /* Scale down for screen view */
     transform-origin: center;
 }
 
@@ -173,7 +177,8 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 66mm 25mm 5mm 25mm; /* Lifted slightly for harmony */
+    padding: 66mm 25mm 5mm 25mm;
+    /* Lifted slightly for harmony */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,21 +189,24 @@ hr {
 .diploma-title {
     font-family: 'DiplomaFont', serif;
     font-size: 46pt;
-    margin-bottom: 4pt; /* Compressed more */
+    margin-bottom: 4pt;
+    /* Compressed more */
     color: #8b0000;
     text-transform: none;
     letter-spacing: 0;
 }
 
 .main-text {
-    font-size: 12.5pt;
+    font-size: 12pt;
     line-height: 1.25;
     margin-bottom: 2pt;
     color: #444;
-    max-width: 88%; /* Expanded to reduce side white space */
+    max-width: 88%;
+    /* Expanded to reduce side white space */
     text-align: justify;
     margin-right: auto;
-    margin-left: 20mm; /* Reduced from 35mm */
+    margin-left: 12mm;
+    /* Reduced from 35mm */
 }
 
 .recipient-name {
@@ -206,24 +214,28 @@ hr {
     font-size: 38pt;
     font-style: italic;
     color: #b45309;
-    margin: 2pt 0; /* Compressed more */
+    margin: 2pt 0;
+    /* Compressed more */
     font-weight: 700;
 }
 
 .sub-text {
-    font-size: 11pt;
+    font-size: 12pt;
     color: #555;
     margin-bottom: 0pt;
-    max-width: 82%; /* Expanded */
+    max-width: 88%;
+    /* Expanded */
     text-align: justify;
     margin-right: auto;
-    margin-left: 24mm; /* Reduced from 35mm */
+    margin-left: 12mm;
+    /* Reduced from 35mm */
 }
 
 .date-line {
     position: absolute;
-    bottom: 62mm; /* Lifted higher per request */
-    right: 48mm;
+    bottom: 62mm;
+    /* Lifted higher per request */
+    right: 42mm;
     font-size: 12pt;
     font-weight: 500;
     color: #333;
@@ -233,7 +245,8 @@ hr {
 
 .signatures {
     position: absolute;
-    bottom: 28mm; /* Positioned at the height of the medal */
+    bottom: 28mm;
+    /* Positioned at the height of the medal */
     left: 0;
     right: 0;
     width: 100%;
@@ -247,7 +260,8 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1pt solid #333; /* Added signing line */
+    border-top: 1pt solid #333;
+    /* Added signing line */
     padding-top: 6pt;
 }
 
