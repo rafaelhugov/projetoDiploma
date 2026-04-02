@@ -182,7 +182,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 62mm 25mm 5mm 25mm;
+    padding: 65mm 25mm 15mm 25mm;
     /* Lifted slightly for harmony */
     display: flex;
     flex-direction: column;
@@ -199,7 +199,7 @@ hr {
     font-family: 'Chomsky', serif;
     font-size: 46pt;
     font-weight: 400;
-    margin-bottom: 4pt;
+    margin-bottom: 10pt;
     /* Compressed more */
     color: #2c2b2b;
     text-transform: none;
@@ -240,7 +240,7 @@ hr {
 
 .date-line {
     position: absolute;
-    bottom: 72mm;
+    bottom: 68mm;
     right: 42mm;
     font-size: 13pt;
     font-weight: 500;
