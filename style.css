@@ -199,7 +199,7 @@ hr {
     font-family: 'Chomsky', serif;
     font-size: 46pt;
     font-weight: 400;
-    margin-bottom: 10pt;
+    margin-bottom: 20pt;
     /* Compressed more */
     color: #2c2b2b;
     text-transform: none;
@@ -240,7 +240,7 @@ hr {
 
 .date-line {
     position: absolute;
-    bottom: 68mm;
+    bottom: 62mm;
     right: 42mm;
     font-size: 13pt;
     font-weight: 500;
