@@ -43,20 +43,21 @@
         <input type="text" id="secretaria" v-model="formData.secretaria" placeholder="Nome do Secretário(a)">
       </div>
 
-      <button type="button" class="primary-btn" @click="print">Imprimir / Salvar PDF</button>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+        <button type="button" class="primary-btn" style="margin-top: 0" @click="$emit('download')">Baixar PDF (Imagem)</button>
+        <button type="button" class="secondary-btn" style="margin-top: 0; padding: 1rem; border-color: rgba(255,255,255,0.2)" @click="$emit('print')">Imprimir (Vetor)</button>
+        <button type="button" class="secondary-btn" style="margin-top: 0; padding: 1rem; border-color: rgba(255,255,255,0.2)" @click="$emit('logout')">Sair</button>
+      </div>
     </form>
 
     <footer>
       <p>&copy; 2026 IPGH - João Pessoa / PB</p>
-      <button type="button" class="secondary-btn" @click="$emit('logout')">Sair</button>
+      
     </footer>
   </aside>
 </template>
 
 <script setup>
 const formData = defineModel('formData')
-
-const print = () => {
-  window.print()
-}
+defineEmits(['download', 'print', 'logout'])
 </script>
