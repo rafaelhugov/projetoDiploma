@@ -24,11 +24,11 @@
       <div class="signatures">
         <div class="signature-box left">
           <div class="sig-name">{{ data.presidente }}</div>
-          <div class="sig-label">{{ data.presidente }}</div>
+          <div class="sig-label">Presidência do IPGH</div>
         </div>
         <div class="signature-box right">
           <div class="sig-name">{{ data.secretaria }}</div>
-          <div class="sig-label">{{ data.secretaria }}</div>
+          <div class="sig-label">Secretaria do IPGH</div>
         </div>
       </div>
     </div>
