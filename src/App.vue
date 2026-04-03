@@ -4,9 +4,9 @@
   </div>
   
   <div v-else class="app-container">
-    <SidebarForm v-model:form-data="diplomaData" @logout="handleLogout" />
+    <SidebarForm v-model:form-data="diplomaData" @logout="handleLogout" @download="downloadDiploma" @print="printDiploma" />
     <main class="preview-area">
-      <DiplomaPreview :data="diplomaData" />
+      <DiplomaPreview :data="diplomaData" id="diploma-wrapper-capture" />
     </main>
   </div>
 </template>
@@ -14,6 +14,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { supabase } from '@/lib/supabase'
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
 
 import Login from '@/components/Login.vue'
 import SidebarForm from '@/components/SidebarForm.vue'
@@ -50,5 +52,33 @@ const handleLogin = async ({ email, password }) => {
 
 const handleLogout = async () => {
   await supabase.auth.signOut()
+}
+
+const downloadDiploma = async () => {
+  const element = document.getElementById('diploma-wrapper-capture');
+  if (!element) return;
+
+  // Render high-res canvas
+  const canvas = await html2canvas(element, {
+    scale: 3, 
+    useCORS: true,
+    backgroundColor: '#ffffff'
+  });
+
+  const imgData = canvas.toDataURL('image/png');
+  
+  // A4 Landscape dimensions in mm
+  const pdf = new jsPDF({
+    orientation: 'landscape',
+    unit: 'mm',
+    format: 'a4'
+  });
+
+  pdf.addImage(imgData, 'PNG', 0, 0, 297, 210);
+  pdf.save(`Diploma_${diplomaData.value.nome.replace(/\s+/g, '_')}.pdf`);
+}
+
+const printDiploma = () => {
+  window.print();
 }
 </script>

@@ -17,21 +17,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
     padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 .login-card {
-    background: var(--bg-sidebar);
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     width: 100%;
-    max-width: 400px;
-    padding: 2.5rem;
-    border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    max-width: 420px;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .login-card header {
@@ -39,40 +57,63 @@
 }
 
 .login-card .logo {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, #fbbf24, #d4af37);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.05em;
+    background: linear-gradient(135deg, #fbbf24 0%, #d4af37 50%, #fef3c7 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 6px rgba(212, 175, 55, 0.2));
 }
 
 .login-card h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--white);
 }
 
 .login-card p {
     color: var(--text-muted);
-    font-size: 0.875rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.login-card .primary-btn {
+    width: 100%;
+    padding: 1.1rem;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1.5rem;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 .error-msg {
     background: rgba(239, 68, 68, 0.1);
     color: var(--error);
-    padding: 0.75rem;
-    border-radius: 6px;
-    font-size: 0.813rem;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
     text-align: center;
     border: 1px solid rgba(239, 68, 68, 0.2);
+    font-weight: 500;
 }
 
 .login-card footer {
     text-align: center;
     font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
+    color: rgba(148, 163, 184, 0.6);
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
 }
 
 body.login-pending .app-container,
@@ -167,10 +208,10 @@ body {
 }
 
 .form-group input {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1rem;
     color: white;
     font-size: 0.9375rem;
     transition: all 0.2s;
@@ -179,8 +220,18 @@ body {
 .form-group input:focus {
     outline: none;
     border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+}
+
+/* Fix for Chrome autocomplete backgrounds in dark mode */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover, 
+.form-group input:-webkit-autofill:focus, 
+.form-group input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #0f172a inset !important;
+    -webkit-text-fill-color: white !important;
+    background-clip: content-box !important;
 }
 
 .primary-btn {
