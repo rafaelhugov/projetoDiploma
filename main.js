@@ -68,6 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', updatePreview);
     });
 
+    // Logout logic
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn');
+            window.location.reload();
+        });
+    }
+
     // Print functionality
     printBtn.addEventListener('click', () => {
         window.print();
