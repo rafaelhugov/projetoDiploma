@@ -13,9 +13,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="app-container">
-        <aside class="sidebar no-print">
+<body class="login-pending">
+    <!-- Login Screen -->
+    <div id="login-container" class="login-container">
+        <div class="login-card">
+            <header>
+                <div class="logo">IPGH</div>
+                <h2>Acesso Restrito</h2>
+                <p>Por favor, entre com suas credenciais para acessar o gerador.</p>
+            </header>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" placeholder="Nome de usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <div id="login-error" class="error-msg" style="display: none;">Usuário ou senha incorretos.</div>
+                <button type="submit" class="primary-btn">Entrar</button>
+            </form>
+            <footer>
+                © 2026 IPGH - Instituto Paraibano de Genealogia e Heráldica
+            </footer>
+        </div>
+    </div>
+
+    <!-- Main Content (Wrapped) -->
+    <div id="app-wrapper" style="display: none;">
+        <div class="app-container">
+            <aside class="sidebar no-print">
             <header>
                 <h1>IPGH</h1>
                 <p>Gerador de Diplomas</p>
@@ -109,6 +137,7 @@
                 </div>
             </div>
         </main>
+    </div>
     </div>
 
     <script src="main.js"></script>

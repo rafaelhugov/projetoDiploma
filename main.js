@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Auth Logic
+    const loginForm = document.getElementById('login-form');
+    const loginError = document.getElementById('login-error');
+    const appWrapper = document.getElementById('app-wrapper');
+
+    function checkAuth() {
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            document.body.classList.remove('login-pending');
+            document.body.classList.add('logged-in');
+            appWrapper.style.display = 'block';
+        }
+    }
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            // Simple demo credentials
+            if (user === 'admin' && pass === 'ipgh2026') {
+                localStorage.setItem('isLoggedIn', 'true');
+                checkAuth();
+            } else {
+                loginError.style.display = 'block';
+            }
+        });
+    }
+
+    checkAuth();
+
     const inputs = {
         titulo: document.getElementById('titulo'),
         nome: document.getElementById('nome'),
