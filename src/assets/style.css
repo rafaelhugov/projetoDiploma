@@ -90,6 +90,12 @@
     margin-top: 1.5rem;
 }
 
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
 .error-msg {
     background: rgba(239, 68, 68, 0.1);
     color: var(--error);
