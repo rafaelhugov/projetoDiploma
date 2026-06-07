@@ -7,6 +7,14 @@
 
     <form id="diploma-form">
       <div class="form-group">
+        <label for="tipo">Tipo de Diploma</label>
+        <select id="tipo" v-model="formData.tipo" @change="updateTitle">
+          <option value="colegiado">Membro do Colegiado</option>
+          <option value="efetivo">Membro Efetivo</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="titulo">Título Principal</label>
         <input type="text" id="titulo" v-model="formData.titulo" placeholder="Ex: Diploma">
       </div>
@@ -30,6 +38,18 @@
         <label for="data-diploma">Data do Diploma</label>
         <input type="text" id="data-diploma" v-model="formData.dataDiploma" placeholder="01 de janeiro de 2026">
       </div>
+
+      <template v-if="formData.tipo === 'colegiado'">
+        <div class="form-group">
+          <label for="cadeira">Número da Cadeira</label>
+          <input type="text" id="cadeira" v-model="formData.cadeira" placeholder="Ex: 01">
+        </div>
+
+        <div class="form-group">
+          <label for="patrono">Nome do Patrono(a)</label>
+          <input type="text" id="patrono" v-model="formData.patrono" placeholder="Nome do Patrono(a)">
+        </div>
+      </template>
 
       <hr>
 
@@ -60,4 +80,12 @@
 <script setup>
 const formData = defineModel('formData')
 defineEmits(['download', 'print', 'logout'])
+
+const updateTitle = () => {
+  if (formData.value.tipo === 'colegiado') {
+    formData.value.titulo = 'Diploma de Membro do Colegiado'
+  } else if (formData.value.tipo === 'efetivo') {
+    formData.value.titulo = 'Diploma de Membro Efetivo'
+  }
+}
 </script>
