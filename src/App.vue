@@ -24,13 +24,16 @@ import DiplomaPreview from '@/components/DiplomaPreview.vue'
 const session = ref(null)
 
 const diplomaData = ref({
-  titulo: 'Diploma',
+  tipo: 'colegiado',
+  titulo: 'Diploma de Membro do Colegiado',
   nome: 'Nome do Homenageado(a)',
   ato: '001/2026',
   dataSessao: '22 de março de 2026',
   dataDiploma: '02 de abril de 2026',
   presidente: 'Presidência do IPGH',
-  secretaria: 'Secretaria do IPGH'
+  secretaria: 'Secretaria do IPGH',
+  cadeira: '01',
+  patrono: 'Nome do Patrono(a)'
 })
 
 onMounted(() => {

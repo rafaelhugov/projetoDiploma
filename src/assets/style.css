@@ -207,7 +207,8 @@ body {
     letter-spacing: 0.05em;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -217,7 +218,24 @@ body {
     transition: all 0.2s;
 }
 
-.form-group input:focus {
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
+    background-repeat: no-repeat;
+    padding-right: 2.5rem;
+}
+
+.form-group select option {
+    background-color: var(--bg-sidebar);
+    color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
     border-color: var(--gold);
     background: rgba(0, 0, 0, 0.4);
@@ -409,8 +427,8 @@ hr {
 }
 
 .sub-text {
-    font-size: 15pt;
-    line-height: 1.3;
+    font-size: 17pt;
+    line-height: 1.35;
     color: #555;
     margin-bottom: 0pt;
     max-width: 90%;
@@ -419,20 +437,26 @@ hr {
     margin-left: 12mm;
 }
 
+.sub-text span {
+    font-weight: normal;
+    color: inherit;
+}
+
 .date-line {
     position: absolute;
-    bottom: 62mm;
+    bottom: 54mm;
     right: 42mm;
     font-size: 13pt;
     font-weight: 500;
     color: #333;
     z-index: 5;
     text-align: right;
+    transition: bottom 0.3s ease;
 }
 
 .signatures {
     position: absolute;
-    bottom: 28mm;
+    bottom: 26mm;
     /* Positioned at the height of the medal */
     left: 0;
     right: 0;
@@ -440,6 +464,16 @@ hr {
     display: flex;
     justify-content: space-between;
     padding: 0 52mm;
+    transition: bottom 0.3s ease;
+}
+
+/* Ajustes dinâmicos para texto longo (3 ou mais linhas) */
+.diploma-wrapper.long-text .date-line {
+    bottom: 46mm;
+}
+
+.diploma-wrapper.long-text .signatures {
+    bottom: 20mm;
 }
 
 .signature-box {
